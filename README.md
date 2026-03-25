@@ -1,15 +1,15 @@
-# Mishamyrt Lidoff
+# mishamyrt homebrew tap
 
 ## How do I install these formulae?
 
-`brew install mishamyrt/lidoff/<formula>`
+`brew install mishamyrt/tap/<formula>`
 
-Or `brew tap mishamyrt/lidoff` and then `brew install <formula>`.
+Or `brew tap mishamyrt/tap` and then `brew install <formula>`.
 
 Or, in a `brew bundle` `Brewfile`:
 
 ```ruby
-tap "mishamyrt/lidoff"
+tap "mishamyrt/tap"
 brew "<formula>"
 ```
 
