@@ -1,8 +1,8 @@
 class BoseNc < Formula
   desc "CLI tool for controlling Bose noise cancelling headphones"
   homepage "https://github.com/mishamyrt/bose-nc"
-  url "https://github.com/mishamyrt/bose-nc/archive/refs/tags/v0.1.0.tar.gz"
-  sha256 "0000000000000000000000000000000000000000000000000000000000000000"
+  url "https://github.com/mishamyrt/bose-nc/archive/refs/tags/v0.1.1.tar.gz"
+  sha256 "6d9df89506c011931117abc318750c750b61070f3984414e2f336902c961f85c"
   license "MIT"
 
   depends_on :macos
