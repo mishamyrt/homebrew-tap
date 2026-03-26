@@ -1,17 +1,17 @@
 class BoseNc < Formula
   desc "CLI tool for controlling Bose noise cancelling headphones"
   homepage "https://github.com/mishamyrt/bose-nc"
-  version "0.2.0"
+  version "0.2.1"
   license "MIT"
 
   on_arm do
-    url "https://github.com/mishamyrt/bose-nc/releases/download/v0.2.0/bose-nc-aarch64-apple-darwin.tar.xz"
-    sha256 "bd1f538662f62336049277ae8a13390db1c61326fe832c458def9f14a525afa3"
+    url "https://github.com/mishamyrt/bose-nc/releases/download/v0.2.1/bose-nc-aarch64-apple-darwin.tar.xz"
+    sha256 "30350e841618434499db3c605ed88be1235ccc7c48e3c12afa5516e01fccbdf8"
   end
 
   on_intel do
-    url "https://github.com/mishamyrt/bose-nc/releases/download/v0.2.0/bose-nc-x86_64-apple-darwin.tar.xz"
-    sha256 "7386ca16f088682ac113b870d1beaaacd969120f0783fe1f9de3e7b7b3586481"
+    url "https://github.com/mishamyrt/bose-nc/releases/download/v0.2.1/bose-nc-x86_64-apple-darwin.tar.xz"
+    sha256 "330b9563f7113b5e5ea774239e1621b4bfb6c50657863118274af0ddcc3ed0c4"
   end
 
   depends_on :macos
