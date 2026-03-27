@@ -1,5 +1,10 @@
 # mishamyrt homebrew tap
 
+## Formulae
+
+- [bose-nc](https://github.com/mishamyrt/bose-nc) - Bose headphones noise cancellation control on macOS
+- [lidoff](https://github.com/mishamyrt/lidoff) - Daemon that turns off MacBook display brightness and enables caffeinate when the lid is partially closed.
+
 ## How do I install these formulae?
 
 `brew install mishamyrt/tap/<formula>`
