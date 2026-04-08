@@ -6,11 +6,11 @@ class BoseNc < Formula
   depends_on :macos
 
   if Hardware::CPU.arm?
-    url "https://github.com/mishamyrt/bose-nc/releases/download/v0.2.2/bose-nc-aarch64-apple-darwin.tar.xz"
-    sha256 "4894d63ea050f921cda939ab650c68b952b87c6941a11593b320b2f95d278d5b"
+    url "https://github.com/mishamyrt/bose-nc/releases/download/v0.3.0/bose-nc-aarch64-apple-darwin.tar.xz"
+    sha256 "16026936f36a4c3ef283a0d0eb1ec4c369430e6121d835959e8b0f97f2f9069b"
   else
-    url "https://github.com/mishamyrt/bose-nc/releases/download/v0.2.2/bose-nc-x86_64-apple-darwin.tar.xz"
-    sha256 "b4ecf105a359985a64df094d1d1c51ddb303f35b32dab86122e082a45e568cec"
+    url "https://github.com/mishamyrt/bose-nc/releases/download/v0.3.0/bose-nc-x86_64-apple-darwin.tar.xz"
+    sha256 "ed9a6f9470415f6723337cb258797e5c56933ab021fbaec572acc59cd71c4f11"
   end
 
   def install
