@@ -1,6 +1,7 @@
 class Repomop < Formula
   desc "Project artifacts cleaner"
   homepage "https://github.com/mishamyrt/repomop"
+  version "0.7.0"
   license "MIT"
 
   depends_on :macos
