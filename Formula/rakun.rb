@@ -1,17 +1,17 @@
 class Rakun < Formula
   desc "Remote repositories synchronizer"
   homepage "https://github.com/mishamyrt/rakun"
-  version "0.1.0"
+  version "0.1.1"
   license "GPL-3.0"
 
   depends_on :macos
 
   if Hardware::CPU.arm?
-    url "https://github.com/mishamyrt/rakun/releases/download/v0.1.0/rakun_v0.1.0_darwin_arm64.tar.gz"
-    sha256 "79f56b0e601792de2e34e790dfefc66897a21ad06dc2a6a8089ac861be4dfc8d"
+    url "https://github.com/mishamyrt/rakun/releases/download/v0.1.1/rakun_v0.1.1_darwin_arm64.tar.gz"
+    sha256 "fb1302821804f6090114cbbeae173760562cf6bb294bb90588d0187f246ba997"
   else
-    url "https://github.com/mishamyrt/rakun/releases/download/v0.1.0/rakun_v0.1.0_darwin_amd64.tar.gz"
-    sha256 "22ab67700b64a79c1ff84ed37f21a47c9baf3337fb20a598158e7d0a4af2e6e9"
+    url "https://github.com/mishamyrt/rakun/releases/download/v0.1.1/rakun_v0.1.1_darwin_amd64.tar.gz"
+    sha256 "41f8efe5e43c6ecca4903c5098ac05f9990ea62c17dc8a2e45fa71dcc41b529c"
   end
 
   def install
