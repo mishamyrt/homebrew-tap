@@ -4,6 +4,8 @@
 
 - [bose-nc](https://github.com/mishamyrt/bose-nc) - Bose headphones noise cancellation control on macOS.
 - [lidoff](https://github.com/mishamyrt/lidoff) - Daemon that turns off MacBook display brightness and enables caffeinate when the lid is partially closed.
+- [nanomiddleclick](https://github.com/mishamyrt/nanomiddleclick) - Lightweight daemon for middle-click emulation.
+- [rakun](https://github.com/mishamyrt/rakun) - Remote repositories synchronizer.
 - [repomop](https://github.com/mishamyrt/repomop) - Project artifacts cleaner.
 
 ## How do I install these formulae?
