@@ -1,24 +1,25 @@
 class Lockdock < Formula
-  desc "Remote repositories synchronizer"
+  desc "macOS Dock position fixer"
   homepage "https://github.com/mishamyrt/lockdock"
-  version "0.0.0"
+  version "0.1.0"
   license "MIT"
 
   depends_on :macos
 
   if Hardware::CPU.arm?
-    url "https://github.com/mishamyrt/rakun/releases/download/v0.1.1/rakun_v0.1.1_darwin_arm64.tar.gz"
-    sha256 "fb1302821804f6090114cbbeae173760562cf6bb294bb90588d0187f246ba997"
+    url "https://github.com/mishamyrt/lockdock/releases/download/v0.1.0/lockdock_v0.1.0_darwin_arm64.tar.gz"
+    sha256 "24d5b7fe70bd1a81b92ab03f9c5190b6d44661ef5095e906c17a3e3ec1f31dd4"
   else
-    url "https://github.com/mishamyrt/rakun/releases/download/v0.1.1/rakun_v0.1.1_darwin_amd64.tar.gz"
-    sha256 "41f8efe5e43c6ecca4903c5098ac05f9990ea62c17dc8a2e45fa71dcc41b529c"
+    url "https://github.com/mishamyrt/lockdock/releases/download/v0.1.0/lockdock_v0.1.0_darwin_amd64.tar.gz"
+    sha256 "c22a8dac8d226cd28911d8b5d82f66a2713dd9c5df0255087575f43d685b13a6"
   end
 
   def install
-    bin.install "rakun"
+    bin.install "lockdock"
+    bin.install "lockdockd"
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}/rakun --version")
+    assert_match version.to_s, shell_output("#{bin}/lockdock version")
   end
 end
