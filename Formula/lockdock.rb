@@ -1,17 +1,17 @@
 class Lockdock < Formula
   desc "macOS Dock position fixer"
   homepage "https://github.com/mishamyrt/lockdock"
-  version "0.1.0"
+  version "0.1.1"
   license "MIT"
 
   depends_on :macos
 
   if Hardware::CPU.arm?
-    url "https://github.com/mishamyrt/lockdock/releases/download/v0.1.0/lockdock_v0.1.0_darwin_arm64.tar.gz"
-    sha256 "24d5b7fe70bd1a81b92ab03f9c5190b6d44661ef5095e906c17a3e3ec1f31dd4"
+    url "https://github.com/mishamyrt/lockdock/releases/download/v0.1.1/lockdock_v0.1.1_darwin_arm64.tar.gz"
+    sha256 "6eb5d8d80b83aeb3b1a134bbe2ea7ce1c1cbeee6acf2a48d346ebe350cb3161d"
   else
-    url "https://github.com/mishamyrt/lockdock/releases/download/v0.1.0/lockdock_v0.1.0_darwin_amd64.tar.gz"
-    sha256 "c22a8dac8d226cd28911d8b5d82f66a2713dd9c5df0255087575f43d685b13a6"
+    url "https://github.com/mishamyrt/lockdock/releases/download/v0.1.1/lockdock_v0.1.1_darwin_amd64.tar.gz"
+    sha256 "c5a5d3a0e4ac846315561d24ed40e4c6d5d55da432bc8ef12b61896b66f7f088"
   end
 
   def install
