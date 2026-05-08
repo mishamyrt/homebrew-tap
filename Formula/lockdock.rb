@@ -1,21 +1,33 @@
 class Lockdock < Formula
   desc "macOS Dock position fixer"
   homepage "https://github.com/mishamyrt/lockdock"
-  version "0.2.0"
+  version "0.3.0"
   license "MIT"
 
   depends_on :macos
 
   if Hardware::CPU.arm?
-    url "https://github.com/mishamyrt/lockdock/releases/download/v0.2.0/lockdock_v0.2.0_darwin_arm64.tar.gz"
-    sha256 "1d92e0cd7d2563af8fa4c253808f86d97367626cb02989d25158920148203705"
+    url "https://github.com/mishamyrt/lockdock/releases/download/v0.3.0/lockdock_v0.3.0_darwin_arm64.tar.gz"
+    sha256 "80d4621a8bd2b1227b0df20898e0ccbb1de6b7a70fb6adcd4b30c9d2bb7d3356"
   else
-    url "https://github.com/mishamyrt/lockdock/releases/download/v0.2.0/lockdock_v0.2.0_darwin_amd64.tar.gz"
-    sha256 "ec634a8c8ea5973f315ff0b05d770e6fcd8fd83276feee46e266fd4c55f0d9bb"
+    url "https://github.com/mishamyrt/lockdock/releases/download/v0.3.0/lockdock_v0.3.0_darwin_amd64.tar.gz"
+    sha256 "15143019c3db893d46dc04afd79af8dde06aabddab594af01ddae826520e1e8e"
   end
 
   def install
     bin.install "lockdock"
+  end
+
+  def post_install
+    pid_path = File.expand_path("~/Library/Caches/co.myrt.lockdock/daemon.pid")
+    return unless File.exist?(pid_path)
+
+    pid_text = File.read(pid_path).strip
+    return unless pid_text.match?(/\A\d+\z/)
+
+    Process.kill("TERM", pid_text.to_i)
+  rescue Errno::ENOENT, Errno::ESRCH
+    nil
   end
 
   test do
