@@ -1,33 +1,40 @@
 class Lockdock < Formula
   desc "macOS Dock position fixer"
   homepage "https://github.com/mishamyrt/lockdock"
-  version "0.3.0"
+  version "0.4.0"
   license "MIT"
 
   depends_on :macos
 
   if Hardware::CPU.arm?
-    url "https://github.com/mishamyrt/lockdock/releases/download/v0.3.0/lockdock_v0.3.0_darwin_arm64.tar.gz"
-    sha256 "80d4621a8bd2b1227b0df20898e0ccbb1de6b7a70fb6adcd4b30c9d2bb7d3356"
+    url "https://github.com/mishamyrt/lockdock/releases/download/v0.4.0/lockdock_v0.4.0_darwin_arm64.tar.gz"
+    sha256 "6a39e522704bb29744fd6fa0c08ab8925a9cb99b151299cd17d010f4a888bd5e"
   else
-    url "https://github.com/mishamyrt/lockdock/releases/download/v0.3.0/lockdock_v0.3.0_darwin_amd64.tar.gz"
-    sha256 "15143019c3db893d46dc04afd79af8dde06aabddab594af01ddae826520e1e8e"
+    url "https://github.com/mishamyrt/lockdock/releases/download/v0.4.0/lockdock_v0.4.0_darwin_amd64.tar.gz"
+    sha256 "2dff97d20d293693a2fa290c458f6e5348c5808ddfa4afdfacaaf76295732692"
   end
 
   def install
     bin.install "lockdock"
   end
 
-  def post_install
-    pid_path = File.expand_path("~/Library/Caches/co.myrt.lockdock/daemon.pid")
-    return unless File.exist?(pid_path)
+  service do
+    run [opt_bin/"lockdock", "run"]
+    keep_alive true
+    process_type :interactive
+    log_path "/dev/null"
+    error_log_path "/dev/null"
+  end
 
-    pid_text = File.read(pid_path).strip
-    return unless pid_text.match?(/\A\d+\z/)
+  def caveats
+    <<~EOS
+      Use  or  to launch Lockdock at login.
 
-    Process.kill("TERM", pid_text.to_i)
-  rescue Errno::ENOENT, Errno::ESRCH
-    nil
+      Stop the service before uninstalling:
+        brew services stop lockdock
+      If the formula was already removed, run:
+        brew services cleanup
+    EOS
   end
 
   test do
