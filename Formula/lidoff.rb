@@ -1,15 +1,15 @@
 class Lidoff < Formula
   desc "Third state for the MacBook lid"
   homepage "https://github.com/mishamyrt/lidoff"
-  version "0.4.3"
+  version "0.5.0"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/mishamyrt/lidoff/releases/download/v0.4.3/lidoff-aarch64-apple-darwin.tar.xz"
-      sha256 "3a7114e2c622fde80e7f5f91ab3a8a4afd1d30f696d473c02ecf085a76fccc2f"
+      url "https://github.com/mishamyrt/lidoff/releases/download/v0.5.0/lidoff-aarch64-apple-darwin.tar.xz"
+      sha256 "f42a737caf9b59de7c98fb4fc88daccfa064fe5903b220562043b09dd3de516d"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/mishamyrt/lidoff/releases/download/v0.4.3/lidoff-x86_64-apple-darwin.tar.xz"
-      sha256 "6647db5f8d27d53ba50bc3cf93f65958a53870b966d8e9ff6987f8dc673499a4"
+      url "https://github.com/mishamyrt/lidoff/releases/download/v0.5.0/lidoff-x86_64-apple-darwin.tar.xz"
+      sha256 "4b8c2e90e6a071889c67c62f7a0a2f69b14a0d72939976134cefd4b98067b986"
     end
   end
   license "MIT"
