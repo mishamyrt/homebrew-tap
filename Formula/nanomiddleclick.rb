@@ -1,15 +1,15 @@
 class Nanomiddleclick < Formula
   desc "Lightweight daemon for middle-click emulation"
   homepage "https://github.com/mishamyrt/nanomiddleclick"
-  version "0.1.0"
+  version "0.1.1"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/mishamyrt/nanomiddleclick/releases/download/v0.1.0/nanomiddleclick-aarch64-apple-darwin.tar.xz"
-      sha256 "3c9376ace0208ed726273f62fa9cb7aac738b5930940d93b3e0dba208344127f"
+      url "https://github.com/mishamyrt/nanomiddleclick/releases/download/v0.1.1/nanomiddleclick-aarch64-apple-darwin.tar.xz"
+      sha256 "969040550fe98823465333436bfd4b50ae189100048c795335af20291ada9a32"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/mishamyrt/nanomiddleclick/releases/download/v0.1.0/nanomiddleclick-x86_64-apple-darwin.tar.xz"
-      sha256 "4ce2b225a7a1ce7e2038a180e2bbda906e70065f57e2c72b5ee8a0a710408007"
+      url "https://github.com/mishamyrt/nanomiddleclick/releases/download/v0.1.1/nanomiddleclick-x86_64-apple-darwin.tar.xz"
+      sha256 "386db584948342ce38c33e1f70782b8cb21349c0538f8cc42e761b1c2246660b"
     end
   end
   license "MIT"
@@ -35,8 +35,12 @@ class Nanomiddleclick < Formula
   end
 
   def install
-    bin.install "nanomiddleclick" if OS.mac? && Hardware::CPU.arm?
-    bin.install "nanomiddleclick" if OS.mac? && Hardware::CPU.intel?
+    if OS.mac? && Hardware::CPU.arm?
+      bin.install "nanomiddleclick"
+    end
+    if OS.mac? && Hardware::CPU.intel?
+      bin.install "nanomiddleclick"
+    end
 
     install_binary_aliases!
 
