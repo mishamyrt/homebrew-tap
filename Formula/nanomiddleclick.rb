@@ -1,15 +1,15 @@
 class Nanomiddleclick < Formula
   desc "Lightweight daemon for middle-click emulation"
   homepage "https://github.com/mishamyrt/nanomiddleclick"
-  version "0.1.1"
+  version "0.1.2"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/mishamyrt/nanomiddleclick/releases/download/v0.1.1/nanomiddleclick-aarch64-apple-darwin.tar.xz"
-      sha256 "969040550fe98823465333436bfd4b50ae189100048c795335af20291ada9a32"
+      url "https://github.com/mishamyrt/nanomiddleclick/releases/download/v0.1.2/nanomiddleclick-aarch64-apple-darwin.tar.xz"
+      sha256 "e5b0928e5fba5d3e8fe93606c8a04f631eee33021546e2d8e8fd0cf366b03da2"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/mishamyrt/nanomiddleclick/releases/download/v0.1.1/nanomiddleclick-x86_64-apple-darwin.tar.xz"
-      sha256 "386db584948342ce38c33e1f70782b8cb21349c0538f8cc42e761b1c2246660b"
+      url "https://github.com/mishamyrt/nanomiddleclick/releases/download/v0.1.2/nanomiddleclick-x86_64-apple-darwin.tar.xz"
+      sha256 "ea8e4295bff58713af1896c05966e6ceec0617039498c3008d3c3cb03a621ec5"
     end
   end
   license "MIT"
