@@ -1,19 +1,19 @@
 class Yaebook < Formula
   desc "Yandex Books EPUB downloader"
   homepage "https://github.com/mishamyrt/yaebook"
-  version "0.0.1"
+  version "0.0.2"
   if OS.mac? && Hardware::CPU.arm?
-    url "https://github.com/mishamyrt/yaebook/releases/download/v0.0.1/yaebook-aarch64-apple-darwin.tar.xz"
-    sha256 "b3aa8cf7beddb119d269df652d00385f9980eb6e664871fd4fd9f4aa991593e3"
+    url "https://github.com/mishamyrt/yaebook/releases/download/v0.0.2/yaebook-aarch64-apple-darwin.tar.xz"
+    sha256 "129bf947e0b13da7a62a098488362d47e72bcfed4bc5e281042320d306194a64"
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/mishamyrt/yaebook/releases/download/v0.0.1/yaebook-aarch64-unknown-linux-gnu.tar.xz"
-      sha256 "b6248a7f79fcf4f873563289df1f29c084e7b7149d354e60fbc2f534ad2d6060"
+      url "https://github.com/mishamyrt/yaebook/releases/download/v0.0.2/yaebook-aarch64-unknown-linux-gnu.tar.xz"
+      sha256 "5f97e2d9713141fe0cad267d3e1953dde597dca7d6aedb912e0b4537cc5867e9"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/mishamyrt/yaebook/releases/download/v0.0.1/yaebook-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "e956153eb61dfd67f341d9c61a6ee1248204853995f4d5c083130052981c46e1"
+      url "https://github.com/mishamyrt/yaebook/releases/download/v0.0.2/yaebook-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "0860825a2e6a650564f65a6c2a647219a2a507bee67fd887c31935010f6f0be3"
     end
   end
   license "MIT"
