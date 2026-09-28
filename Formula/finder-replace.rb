@@ -1,18 +1,18 @@
 class FinderReplace < Formula
   desc "Open a configured application when clicking Finder in the Dock"
   homepage "https://github.com/mishamyrt/finder-replace"
-  version "0.1.0"
+  version "0.1.1"
 
   depends_on macos: :ventura
 
   on_arm do
-    url "https://github.com/mishamyrt/finder-replace/releases/download/v0.1.0/finder-replace_v0.1.0_darwin_arm64.tar.gz"
-    sha256 "f716890b23177be472f96556d1888a9079e1214aa077b74f51b1383d4685a916"
+    url "https://github.com/mishamyrt/finder-replace/releases/download/v0.1.1/finder-replace_v0.1.1_darwin_arm64.tar.gz"
+    sha256 "1a7f74000cceaf94d42e6e957713531f453931705fce7a5ec91d8e4ee73271fc"
   end
 
   on_intel do
-    url "https://github.com/mishamyrt/finder-replace/releases/download/v0.1.0/finder-replace_v0.1.0_darwin_x86_64.tar.gz"
-    sha256 "9860898742c0749c631415358ef5cd9fae68515a15f0b3ebabd45e74c4c8bab5"
+    url "https://github.com/mishamyrt/finder-replace/releases/download/v0.1.1/finder-replace_v0.1.1_darwin_x86_64.tar.gz"
+    sha256 "392e843d1ec9952f6771bad71df6ccf047fbb47ea52c601ddb5542ab7d9cfc60"
   end
 
   def install
