@@ -1,15 +1,15 @@
 class Lidoff < Formula
   desc "Third state for the MacBook lid"
   homepage "https://github.com/mishamyrt/lidoff"
-  version "0.5.0"
+  version "0.5.1"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/mishamyrt/lidoff/releases/download/v0.5.0/lidoff-aarch64-apple-darwin.tar.xz"
-      sha256 "f42a737caf9b59de7c98fb4fc88daccfa064fe5903b220562043b09dd3de516d"
+      url "https://github.com/mishamyrt/lidoff/releases/download/v0.5.1/lidoff-aarch64-apple-darwin.tar.xz"
+      sha256 "5cb53f1021d8bcf4ab372fcb8afc455163d09571984100d9a01e340283b89948"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/mishamyrt/lidoff/releases/download/v0.5.0/lidoff-x86_64-apple-darwin.tar.xz"
-      sha256 "4b8c2e90e6a071889c67c62f7a0a2f69b14a0d72939976134cefd4b98067b986"
+      url "https://github.com/mishamyrt/lidoff/releases/download/v0.5.1/lidoff-x86_64-apple-darwin.tar.xz"
+      sha256 "b695ca093f7a17f8781989939abb06e35fac65a1a6843d19d2ad9c26eb0d840a"
     end
   end
   license "MIT"
@@ -35,8 +35,12 @@ class Lidoff < Formula
   end
 
   def install
-    bin.install "lidoff" if OS.mac? && Hardware::CPU.arm?
-    bin.install "lidoff" if OS.mac? && Hardware::CPU.intel?
+    if OS.mac? && Hardware::CPU.arm?
+      bin.install "lidoff"
+    end
+    if OS.mac? && Hardware::CPU.intel?
+      bin.install "lidoff"
+    end
 
     install_binary_aliases!
 
