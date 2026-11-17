@@ -1,18 +1,20 @@
 class Runon < Formula
   desc "Run commands on macOS system events"
   homepage "https://github.com/mishamyrt/runon"
-  version "0.2.0"
+  version "0.3.0"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/mishamyrt/runon/releases/download/v0.2.0/runon-aarch64-apple-darwin.tar.xz"
-      sha256 "f531450a35f5bc4267dd754dc9c5d95b20ead6e67d26df7d4f519d025ed6ef86"
+      url "https://github.com/mishamyrt/runon/releases/download/v0.3.0/runon-aarch64-apple-darwin.tar.xz"
+      sha256 "1b4d7b62e8893e1fb2c832d5b2c60ff03ef34f7bd28501903488b3f827fe7341"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/mishamyrt/runon/releases/download/v0.2.0/runon-x86_64-apple-darwin.tar.xz"
-      sha256 "790d5441550381b4a228816895133e81d111077c505b36aa1872c42d56d34178"
+      url "https://github.com/mishamyrt/runon/releases/download/v0.3.0/runon-x86_64-apple-darwin.tar.xz"
+      sha256 "118a4210d35e5809329cbeb1e26f608cef256eb880b9e5966448b899f5545c0f"
     end
   end
   license "MIT"
+
+  depends_on macos: :sequoia
 
   BINARY_ALIASES = {
     "aarch64-apple-darwin": {},
@@ -51,5 +53,17 @@ class Runon < Formula
     # Install any leftover files in pkgshare; these are probably config or
     # sample files.
     pkgshare.install(*leftover_contents) unless leftover_contents.empty?
+  end
+
+  service do
+    run opt_bin/"runon"
+    keep_alive successful_exit: false
+    stop_timeout 5
+    environment_variables HOME: Dir.home
+    error_log_path var/"log/runon.log"
+  end
+
+  test do
+    assert_match version.to_s, shell_output("#{bin}/runon --version")
   end
 end
