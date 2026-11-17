@@ -1,15 +1,15 @@
 class Lidoff < Formula
   desc "Third state for the MacBook lid"
   homepage "https://github.com/mishamyrt/lidoff"
-  version "0.5.2"
+  version "0.6.0"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/mishamyrt/lidoff/releases/download/v0.5.2/lidoff-aarch64-apple-darwin.tar.xz"
-      sha256 "c8e0ae7b0e86f65fad8197ee31544f52e18c9db06849ed9586f02e1e84ebce27"
+      url "https://github.com/mishamyrt/lidoff/releases/download/v0.6.0/lidoff-aarch64-apple-darwin.tar.xz"
+      sha256 "44406388a8b3d3223840fdac71f953f3d2cb84c13d2ed2d7b7007442ba0de6f0"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/mishamyrt/lidoff/releases/download/v0.5.2/lidoff-x86_64-apple-darwin.tar.xz"
-      sha256 "6ab032fb62fe6f12db86da2cdca38e44f467773cb4126c4eab501f5cb1040d48"
+      url "https://github.com/mishamyrt/lidoff/releases/download/v0.6.0/lidoff-x86_64-apple-darwin.tar.xz"
+      sha256 "35b65fb467d2087750ede9b0e2a974bb26e0b8e66d1c481443591170be1a26f1"
     end
   end
   license "MIT"
@@ -51,5 +51,12 @@ class Lidoff < Formula
     # Install any leftover files in pkgshare; these are probably config or
     # sample files.
     pkgshare.install(*leftover_contents) unless leftover_contents.empty?
+  end
+
+  service do
+    run opt_bin/"lidoff"
+    keep_alive true
+    log_path var/"log/lidoff.log"
+    error_log_path var/"log/lidoff.log"
   end
 end
