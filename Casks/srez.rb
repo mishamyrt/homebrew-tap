@@ -1,6 +1,6 @@
 cask "srez" do
-  version "1.0.0"
-  sha256 "49f84d65398e27d02cf1addb09fb75877d2a7cfc03ac603eae478f7fea1257a4"
+  version "1.1.0"
+  sha256 "3995c0c85e9b51e34bb7df413724acb24299c27337e6a9b99d414acbf89043e2"
 
   url "https://github.com/mishamyrt/srez/releases/download/v#{version}/Srez-v#{version}-macos-arm64.zip"
   name "Srez"
