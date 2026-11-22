@@ -1,6 +1,6 @@
 cask "calibrat" do
-  version "0.1.1"
-  sha256 "ac59e7a4dce2256e811ea5662478f806daa5f0b6685cb6e32ad01ab2b97e417b"
+  version "0.1.2"
+  sha256 "993f26feb36555477d9bac631970e7ff1fec24c94d23f718eac2733cc41f66ad"
 
   url "https://github.com/mishamyrt/calibrat-releases/releases/download/v#{version}/Calibrat-#{version}.dmg"
   name "Calibrat"
