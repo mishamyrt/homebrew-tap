@@ -1,8 +1,8 @@
 cask "michelle" do
-  version "0.3.0"
-  sha256 "98a4308580d93411eda8d70644ab713a11dc405115581453baaa7edd589abb19"
+  version "0.3.1"
+  sha256 "c8555ae1518de652348c9bc8055b745ec88eb6b6228d971cfd74ef4228a92df7"
 
-  url "https://github.com/mishamyrt/michelle/releases/download/v0.3.0/Michelle-0.3.0.dmg"
+  url "https://github.com/mishamyrt/michelle/releases/download/v0.3.1/Michelle-0.3.1.dmg"
   name "Michelle"
   desc "Native macOS client for local coding agents"
   homepage "https://github.com/mishamyrt/michelle"
